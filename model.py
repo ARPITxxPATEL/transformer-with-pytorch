@@ -63,7 +63,7 @@ class FeedForwardBlock(nn.Module):
         # (Batch, Seq_len, d_model) --> (Batch, Seq_len, d_ff) --> (Batch, Seq_len, d_model)
         return self.linear_2(self.dropout(torch.relu(self.linear_1(x))))
 
-class MultiHeadAttentionBlock(nn.module):
+class MultiHeadAttentionBlock(nn.Module):
     
     def __init__(self, d_model: int, h: int, dropout: float):
         super().__init__()
